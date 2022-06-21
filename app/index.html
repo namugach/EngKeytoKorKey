@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>eng -> kor</title>
+	<style>
+		#convform {
+			margin: auto;
+		}
+		#keyboard {
+			-ms-user-select: none; 
+			-moz-user-select: -moz-none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		.keyCap:hover {
+			background-color: #5c5c5c6b
+		}
+		.keyCap:active {
+			background-color: #0f0f0f6b
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app"></div>
+	<table id="convform" class="wiki">
+		<tbody>
+			<tr>
+				<th style="text-align: right"> 문장 입력:</th>
+				<td><textarea id="txtSource" rows="4" cols="60" onkeyup="doConvert();"></textarea></td>
+				<td style="text-align: center"> <button onclick="clearText();">비우기</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align: center"> <input type="radio" id="optEtoH" name="Mode" checked="checked"
+						onclick="doConvert();"><label for="optEtoH">영타 → 한글</label><span></span><input type="radio" id="optHtoE"
+						name="Mode" onclick="doConvert();"><label for="optHtoE">한타 → 영문</label>
+				</td>
+			</tr>
+			<tr>
+				<th style="text-align: right"> 변환 결과:</th>
+				<td><textarea id="txtConv" rows="4" cols="60" readonly="readonly"></textarea></td>
+				<td style="text-align: center"> <button onclick="copyResult();">복사</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="./src/main.js"></script>
+	<script src="./src/visualKeybord.js"></script>
+</body>
+
+</html>
